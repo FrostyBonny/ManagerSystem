@@ -1,5 +1,6 @@
 #include "workerdialog.h"
 #include "ui_workerdialog.h"
+#include "macro.h"
 
 WorkerDialog::WorkerDialog(QWidget *parent) :
     QDialog(parent),
@@ -30,7 +31,7 @@ void WorkerDialog::on_pushButton_back_clicked()
 {
     //同步信息
     fstream file;
-    file.open("E:\\doc\\worker.txt", ios::out);
+	file.open(WORKER_PATH, ios::out);
     if (!file.is_open())
     {
         qDebug() << "open file fail" << endl;

@@ -1,5 +1,5 @@
 #include "resources.h"
-
+#include "macro.h"
 vector<worker*> Resources::m_worker = vector<worker*>();
 vector<manager*> Resources::m_manager = vector<manager*>();
 int Resources::whichworker = -1;
@@ -33,7 +33,7 @@ Resources::Resources()
     fstream file;
     string inf;
 
-    file.open("E:\\doc\\worker.txt",ios::app|ios::out|ios::in);
+	file.open(WORKER_PATH,ios::app|ios::out|ios::in);
 
     if (!file.is_open())
     {
@@ -54,7 +54,7 @@ Resources::Resources()
     }
     file.close();
 
-    file.open("E:\\doc\\manager.txt",ios::app|ios::out|ios::in);
+	file.open(MANAGER_PATH,ios::app|ios::out|ios::in);
     if (!file.is_open())
     {
            qDebug() << "creat manager file fail" << endl;

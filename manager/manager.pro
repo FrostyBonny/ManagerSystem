@@ -33,6 +33,8 @@ SOURCES += main.cpp\
     datarecovery.cpp
 
 HEADERS  += mainwindow.h \
+    macro.h \
+    param.h \
     stdafx.h \
     worker.h \
     register.h \

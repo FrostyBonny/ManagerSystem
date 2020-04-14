@@ -1,5 +1,6 @@
 #include "register.h"
 #include "ui_register.h"
+#include "macro.h"
 #include <QString>
 
 Register::Register(QWidget *parent) :
@@ -147,7 +148,7 @@ void Register::on_pushButton_register_clicked()
            Resources::m_worker.push_back(tworker);
 
            fstream file;
-           file.open("E:\\doc\\worker.txt", ios::app | ios::out);
+		   file.open(WORKER_PATH, ios::app | ios::out);
            if (!file.is_open())
            {
                qDebug() << "open worker txt file fail" << endl;
@@ -273,7 +274,7 @@ void Register::on_pushButton_register_clicked()
 
             //文件录入
             fstream file;
-            file.open("E:\\doc\\manager.txt", ios::app | ios::out);
+			file.open(MANAGER_PATH, ios::app | ios::out);
             if (!file.is_open())
             {
                 qDebug() << "open manager txt file fail" << endl;

@@ -1,5 +1,6 @@
 #include "addworker.h"
 #include "ui_addworker.h"
+#include "macro.h"
 
 AddWorker::AddWorker(QWidget *parent) :
     QDialog(parent),
@@ -106,7 +107,7 @@ void AddWorker::on_pushButton_add_clicked()
 
         //文件写入
         fstream file;
-        file.open("E:\\doc\\worker.txt", ios::app | ios::out);
+		file.open(WORKER_PATH, ios::app | ios::out);
         if (!file.is_open())
         {
             qDebug() << "open worker txt file fail" << endl;

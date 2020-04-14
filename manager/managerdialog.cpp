@@ -1,5 +1,6 @@
 #include "managerdialog.h"
 #include "ui_managerdialog.h"
+#include "macro.h"
 
 ManagerDialog::ManagerDialog(QWidget *parent) :
     QDialog(parent),
@@ -18,7 +19,7 @@ void ManagerDialog::on_pushButton_back_clicked()
 {
     //将文件中的数据读取到程序中并且保存
     fstream file;
-    file.open("E:\\doc\\manager.txt", ios::out);
+	file.open(MANAGER_PATH, ios::out);
     if (!file.is_open())
     {
         qDebug() << "open file fail" << endl;
@@ -36,7 +37,7 @@ void ManagerDialog::on_pushButton_back_clicked()
         file.close();
     }
 
-    file.open("E:\\doc\\worker.txt", ios::out);
+	file.open(WORKER_PATH, ios::out);
     if (!file.is_open())
     {
         qDebug() << "open file fail" << endl;

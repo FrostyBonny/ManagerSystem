@@ -1,5 +1,6 @@
 #include "datarecovery.h"
 #include "ui_datarecovery.h"
+#include "macro.h"
 
 DataRecovery::DataRecovery(QWidget *parent) :
     QDialog(parent),
@@ -99,7 +100,7 @@ void DataRecovery::on_pushButton_recover_clicked()
 void DataRecovery::on_pushButton_back_clicked()
 {
     fstream file;
-    file.open("E:\\doc\\manager.txt", ios::out);
+	file.open(MANAGER_PATH, ios::out);
     if (!file.is_open())
     {
         qDebug() << "open file fail" << endl;
@@ -117,7 +118,7 @@ void DataRecovery::on_pushButton_back_clicked()
         file.close();
     }
 
-    file.open("E:\\doc\\worker.txt", ios::out);
+	file.open(WORKER_PATH, ios::out);
     if (!file.is_open())
     {
         qDebug() << "open file fail" << endl;
